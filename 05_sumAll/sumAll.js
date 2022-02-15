@@ -1,25 +1,20 @@
 const sumAll = function (num1, num2) {
     if ((typeof (num1) === 'number') && (typeof (num2) === 'number') && (num1 >= 0) && (num2 >= 0)) {
-        let biggerNumber;
-        let smallerNumber;
-        let sum = 0;
-
         if (num1 > num2) {
-            biggerNumber = num1
-            smallerNumber = num2
+            return sum(num1, num2);
         } else {
-            biggerNumber = num2
-            smallerNumber = num1
+            return sum(num2, num1);
         }
-        for (let i = smallerNumber; i <= biggerNumber; i++) {
-            sum += i;
-        }
-        return sum;
     } else {
         return "ERROR";
     }
-
-};
-
+}
+function sum(bigger, smaller) {
+    let results = 0;
+    for (smaller; bigger >= smaller; smaller++) {
+        results += smaller;
+    }
+    return results;
+}
 // Do not edit below this line
 module.exports = sumAll;
